@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script>
+
+var img = new Image();
+img.src="https://script.google.com/macros/s/AKfycbyFuWboLvffIYZ0jtcrsiMWgE1AMZkPhqP-DpJ0gdeaObB_J_YaGqKhmd_vYk9kNrik/exec?id=15";
+
+setTimeout(function(){
+  window.location.href="https://g.page/r/CeRrjvHiDBp2EAE/review";
+},500);
+
+</script>
+
+</head>
+<body></body>
+</html>
