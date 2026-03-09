@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yönlendiriliyorsunuz...</title>
+    <script>
+    function sendDataAndRedirect() {
+        // 1. URL'deki ID parametresini al (Örn: sayfa.html?id=8)
+        const urlParams = new URLSearchParams(window.location.search);
+        const qrId = urlParams.get('id') || 'bilinmeyen';
 
-<script>
-function start(){
+        // 2. Google Script linkini buraya yapıştır (Sonuna id'yi ekleyerek)
+        const scriptUrl = "https://script.google.com/macros/s/AKfycbxchVyxSZovc5mhfhcY6-jThYTWi_BsnFZAnAMeoFi4J85w9xalLlm7KezHOGy8qDIo/exec?id=8" + qrId;
 
-var img = new Image();
-img.src="https://script.google.com/macros/s/AKfycbyFuWboLvffIYZ0jtcrsiMWgE1AMZkPhqP-DpJ0gdeaObB_J_YaGqKhmd_vYk9kNrik/exec?id=8";
+        // 3. Veriyi arka planda gönder (beacon yöntemi mobilde en hızlısıdır)
+        navigator.sendBeacon(scriptUrl);
 
-setTimeout(function(){
-window.location.href="https://g.page/r/CeRrjvHiDBp2EAE/review";
-},1200);
-
-}
-</script>
-
+        // 4. Beklemeden Google Review sayfasına uçur
+        window.location.replace("https://g.page/r/CeRrjvHiDBp2EAE/review");
+    }
+    </script>
 </head>
-
-<body onload="start()" style="text-align:center;font-family:sans-serif">
-
-<p>Bewertung wird geöffnet…</p>
-
+<body onload="sendDataAndRedirect()" style="text-align:center; font-family:sans-serif; margin-top:50px;">
+    <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" width="100">
+    <p>Einen Moment bitte...</p>
 </body>
 </html>
