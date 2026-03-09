@@ -7,11 +7,15 @@
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id") || "unknown";
 
-fetch("https://script.google.com/macros/s/AKfycbyFuWboLvffIYZ0jtcrsiMWgE1AMZkPhqP-DpJ0gdeaObB_J_YaGqKhmd_vYk9kNrik/exec?id=" + id);
+const url = "https://script.google.com/macros/s/AKfycbyFuWboLvffIYZ0jtcrsiMWgE1AMZkPhqP-DpJ0gdeaObB_J_YaGqKhmd_vYk9kNrik/exec?id=" + id;
+
+fetch(url);
+
+setTimeout(function(){
+  window.location.href="https://g.page/r/CeRrjvHiDBp2EAE/review";
+}, 800);
 
 </script>
-
-<meta http-equiv="refresh" content="0; url=https://g.page/r/CeRrjvHiDBp2EAE/review">
 
 </head>
 <body></body>
